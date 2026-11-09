@@ -47,7 +47,7 @@ moov_money//<br>
 ├── README.md/<br>
 │/<br>
 ├── apps//<br>
-│   │/<br>
+│<space>│/<br>
 │   └── superapp//<br>
 │       ├── pubspec.yaml/<br>
 │       ├── analysis_options.yaml/<br>
