@@ -39,346 +39,346 @@ contribute to the package, how to file issues, what response they can expect
 from the package authors, and more.
 
 
-moov_money/
-│
-├── pubspec.yaml
-├── melos.yaml
-├── analysis_options.yaml
-├── README.md
-│
-├── apps/
-│   │
-│   └── superapp/
-│       ├── pubspec.yaml
-│       ├── analysis_options.yaml
-│       │
-│       ├── android/
-│       ├── ios/
-│       ├── assets/
-│       │   ├── images/
-│       │   ├── icons/
-│       │   ├── animations/
-│       │   ├── fonts/
-│       │   └── translations/
-│       │       ├── en_US.json
-│       │       └── fr_FR.json
-│       │
-│       └── lib/
-│           │
-│           ├── main.dart
-│           │
-│           ├── app/
-│           │   │
-│           │   ├── app.dart
-│           │   ├── app_binding.dart
-│           │   ├── app_routes.dart
-│           │   ├── app_pages.dart
-│           │   │
-│           │   ├── bindings/
-│           │   │   ├── initial_binding.dart
-│           │   │   └── superapp_binding.dart
-│           │   │
-│           │   ├── config/
-│           │   │   ├── app_config.dart
-│           │   │   ├── environment_config.dart
-│           │   │   ├── country_config.dart
-│           │   │   └── flavor_config.dart
-│           │   │
-│           │   ├── navigation/
-│           │   │   ├── app_navigation.dart
-│           │   │   ├── navigation_service.dart
-│           │   │   └── miniapp_host_page.dart
-│           │   │
-│           │   ├── sdk/
-│           │   │   ├── superapp_sdk_factory.dart
-│           │   │   └── adapters/
-│           │   │       ├── auth_sdk_adapter.dart
-│           │   │       ├── wallet_sdk_adapter.dart
-│           │   │       ├── payment_sdk_adapter.dart
-│           │   │       └── bill_payment_sdk_adapter.dart
-│           │   │
-│           │   └── services/
-│           │       ├── auth_session_service.dart
-│           │       ├── wallet_service.dart
-│           │       ├── payment_service.dart
-│           │       ├── country_service.dart
-│           │       └── user_session_service.dart
-│           │
-│           ├── features/
-│           │   │
-│           │   ├── splash/
-│           │   ├── onboarding/
-│           │   ├── authentication/
-│           │   ├── dashboard/
-│           │   ├── wallet/
-│           │   ├── profile/
-│           │   ├── settings/
-│           │   ├── notifications/
-│           │   └── support/
-│           │
-│           ├── miniapps/
-│           │   ├── miniapp_initializer.dart
-│           │   └── miniapp_registration.dart
-│           │
-│           └── shared/
-│               ├── constants/
-│               ├── enums/
-│               ├── extensions/
-│               ├── helpers/
-│               └── utils/
-│
-├── packages/
-│   │
-│   ├── core/
-│   │   │
-│   │   ├── core_common/
-│   │   │   ├── pubspec.yaml
-│   │   │   └── lib/
-│   │   │       ├── core_common.dart
-│   │   │       └── src/
-│   │   │           ├── constants/
-│   │   │           ├── enums/
-│   │   │           ├── exceptions/
-│   │   │           ├── extensions/
-│   │   │           ├── helpers/
-│   │   │           ├── utils/
-│   │   │           └── result/
-│   │   │
-│   │   ├── core_network/
-│   │   │   ├── pubspec.yaml
-│   │   │   └── lib/
-│   │   │       ├── core_network.dart
-│   │   │       └── src/
-│   │   │           ├── dio_client.dart
-│   │   │           ├── api_endpoints.dart
-│   │   │           ├── api_response.dart
-│   │   │           ├── network_info.dart
-│   │   │           ├── interceptors/
-│   │   │           │   ├── auth_interceptor.dart
-│   │   │           │   ├── retry_interceptor.dart
-│   │   │           │   ├── log_interceptor.dart
-│   │   │           │   └── session_expired_interceptor.dart
-│   │   │           └── exceptions/
-│   │   │
-│   │   ├── core_storage/
-│   │   │   ├── pubspec.yaml
-│   │   │   └── lib/
-│   │   │       ├── core_storage.dart
-│   │   │       └── src/
-│   │   │           ├── local_storage.dart
-│   │   │           ├── secure_storage.dart
-│   │   │           ├── storage_keys.dart
-│   │   │           └── storage_service.dart
-│   │   │
-│   │   ├── core_security/
-│   │   │   ├── pubspec.yaml
-│   │   │   └── lib/
-│   │   │       ├── core_security.dart
-│   │   │       └── src/
-│   │   │           ├── biometric/
-│   │   │           ├── mpin/
-│   │   │           ├── encryption/
-│   │   │           ├── device_security/
-│   │   │           └── session_security/
-│   │   │
-│   │   ├── core_theme/
-│   │   │   ├── pubspec.yaml
-│   │   │   └── lib/
-│   │   │       ├── core_theme.dart
-│   │   │       └── src/
-│   │   │           ├── colors/
-│   │   │           ├── typography/
-│   │   │           ├── themes/
-│   │   │           ├── dimensions/
-│   │   │           └── theme_controller.dart
-│   │   │
-│   │   ├── core_localization/
-│   │   │   ├── pubspec.yaml
-│   │   │   └── lib/
-│   │   │       ├── core_localization.dart
-│   │   │       └── src/
-│   │   │           ├── locale_service.dart
-│   │   │           └── translation_loader.dart
-│   │   │
-│   │   └── core_logging/
-│   │       ├── pubspec.yaml
-│   │       └── lib/
-│   │           ├── core_logging.dart
-│   │           └── src/
-│   │               ├── app_logger.dart
-│   │               └── log_observer.dart
-│   │
-│   ├── superapp_sdk/
-│   │   ├── pubspec.yaml
-│   │   └── lib/
-│   │       ├── superapp_sdk.dart
-│   │       └── src/
-│   │           ├── auth/
-│   │           │   └── auth_sdk.dart
-│   │           ├── wallet/
-│   │           │   └── wallet_sdk.dart
-│   │           ├── payment/
-│   │           │   ├── payment_sdk.dart
-│   │           │   └── bill_payment_sdk.dart
-│   │           ├── navigation/
-│   │           │   └── navigation_sdk.dart
-│   │           ├── device/
-│   │           │   └── device_sdk.dart
-│   │           ├── analytics/
-│   │           │   └── analytics_sdk.dart
-│   │           └── models/
-│   │               ├── app_user.dart
-│   │               ├── wallet_balance.dart
-│   │               ├── payment_request.dart
-│   │               ├── payment_result.dart
-│   │               └── bill_payment_request.dart
-│   │
-│   ├── miniapp_platform/
-│   │   │
-│   │   ├── miniapp_contract/
-│   │   │   ├── pubspec.yaml
-│   │   │   └── lib/
-│   │   │       ├── miniapp_contract.dart
-│   │   │       └── src/
-│   │   │           ├── miniapp.dart
-│   │   │           ├── miniapp_manifest.dart
-│   │   │           ├── miniapp_context.dart
-│   │   │           ├── miniapp_status.dart
-│   │   │           ├── miniapp_capability.dart
-│   │   │           └── miniapp_exception.dart
-│   │   │
-│   │   ├── miniapp_registry/
-│   │   │   ├── pubspec.yaml
-│   │   │   └── lib/
-│   │   │       ├── miniapp_registry.dart
-│   │   │       └── src/
-│   │   │           ├── registry.dart
-│   │   │           └── registry_entry.dart
-│   │   │
-│   │   ├── miniapp_runtime/
-│   │   │   ├── pubspec.yaml
-│   │   │   └── lib/
-│   │   │       ├── miniapp_runtime.dart
-│   │   │       └── src/
-│   │   │           ├── runtime.dart
-│   │   │           ├── miniapp_session.dart
-│   │   │           ├── miniapp_launcher.dart
-│   │   │           ├── miniapp_lifecycle.dart
-│   │   │           ├── miniapp_access_manager.dart
-│   │   │           ├── miniapp_navigation_coordinator.dart
-│   │   │           └── miniapp_error_handler.dart
-│   │   │
-│   │   └── miniapp_event_bus/
-│   │       ├── pubspec.yaml
-│   │       └── lib/
-│   │           ├── miniapp_event_bus.dart
-│   │           └── src/
-│   │               ├── miniapp_event.dart
-│   │               └── event_bus.dart
-│   │
-│   ├── miniapps/
-│   │   │
-│   │   ├── miniapp_send_money/
-│   │   │   ├── pubspec.yaml
-│   │   │   └── lib/
-│   │   │       ├── miniapp_send_money.dart
-│   │   │       └── src/
-│   │   │           ├── send_money_miniapp.dart
-│   │   │           ├── domain/
-│   │   │           │   ├── entities/
-│   │   │           │   ├── repositories/
-│   │   │           │   └── usecases/
-│   │   │           ├── data/
-│   │   │           │   ├── models/
-│   │   │           │   ├── datasources/
-│   │   │           │   └── repositories/
-│   │   │           └── presentation/
-│   │   │               ├── bindings/
-│   │   │               ├── controllers/
-│   │   │               ├── pages/
-│   │   │               └── widgets/
-│   │   │
-│   │   ├── miniapp_bill_payment/
-│   │   │   ├── pubspec.yaml
-│   │   │   └── lib/
-│   │   │       ├── miniapp_bill_payment.dart
-│   │   │       └── src/
-│   │   │           ├── bill_payment_miniapp.dart
-│   │   │           ├── domain/
-│   │   │           │   ├── entities/
-│   │   │           │   │   ├── biller.dart
-│   │   │           │   │   ├── biller_field.dart
-│   │   │           │   │   ├── biller_account.dart
-│   │   │           │   │   └── bill_payment_request.dart
-│   │   │           │   ├── repositories/
-│   │   │           │   └── usecases/
-│   │   │           ├── data/
-│   │   │           │   ├── models/
-│   │   │           │   ├── datasources/
-│   │   │           │   └── repositories/
-│   │   │           └── presentation/
-│   │   │               ├── bindings/
-│   │   │               ├── controllers/
-│   │   │               ├── pages/
-│   │   │               │   ├── biller_list_page.dart
-│   │   │               │   ├── biller_form_page.dart
-│   │   │               │   └── biller_review_page.dart
-│   │   │               ├── widgets/
-│   │   │               │   ├── dynamic_biller_form.dart
-│   │   │               │   ├── dynamic_form_field.dart
-│   │   │               │   ├── biller_account_dropdown.dart
-│   │   │               │   └── biller_custom_screen_registry.dart
-│   │   │               └── validators/
-│   │   │
-│   │   ├── miniapp_qr_payment/
-│   │   │   ├── pubspec.yaml
-│   │   │   └── lib/
-│   │   │       ├── miniapp_qr_payment.dart
-│   │   │       └── src/
-│   │   │
-│   │   ├── miniapp_bank_transfer/
-│   │   │   ├── pubspec.yaml
-│   │   │   └── lib/
-│   │   │       ├── miniapp_bank_transfer.dart
-│   │   │       └── src/
-│   │   │
-│   │   ├── miniapp_merchant/
-│   │   │   ├── pubspec.yaml
-│   │   │   └── lib/
-│   │   │       ├── miniapp_merchant.dart
-│   │   │       └── src/
-│   │   │
-│   │   └── miniapp_shopping/
-│   │       ├── pubspec.yaml
-│   │       └── lib/
-│   │           ├── miniapp_shopping.dart
-│   │           └── src/
-│   │
-│   └── shared_ui/
-│       ├── pubspec.yaml
-│       └── lib/
-│           ├── shared_ui.dart
-│           └── src/
-│               ├── buttons/
-│               ├── cards/
-│               ├── dialogs/
-│               ├── fields/
-│               ├── loaders/
-│               ├── navigation/
-│               ├── sheets/
-│               ├── typography/
-│               └── widgets/
-│
-├── test/
-│   ├── core/
-│   ├── sdk/
-│   ├── runtime/
-│   └── integration/
-│
-└── docs/
-    ├── architecture.md
-    ├── miniapp_development_guide.md
-    ├── sdk_documentation.md
+moov_money//<br>
+│/<br>
+├── pubspec.yaml/<br>
+├── melos.yaml/<br>
+├── analysis_options.yaml/<br>
+├── README.md/<br>
+│/<br>
+├── apps//<br>
+│   │/<br>
+│   └── superapp//<br>
+│       ├── pubspec.yaml/<br>
+│       ├── analysis_options.yaml/<br>
+│       │/<br>
+│       ├── android//<br>
+│       ├── ios//<br>
+│       ├── assets//<br>
+│       │   ├── images//<br>
+│       │   ├── icons//<br>
+│       │   ├── animations//<br>
+│       │   ├── fonts//<br>
+│       │   └── translations//<br>
+│       │       ├── en_US.json/<br>
+│       │       └── fr_FR.json/<br>
+│       │/<br>
+│       └── lib//<br>
+│           │/<br>
+│           ├── main.dart/<br>
+│           │/<br>
+│           ├── app//<br>
+│           │   │/<br>
+│           │   ├── app.dart/<br>
+│           │   ├── app_binding.dart/<br>
+│           │   ├── app_routes.dart/<br>
+│           │   ├── app_pages.dart/<br>
+│           │   │/<br>
+│           │   ├── bindings//<br>
+│           │   │   ├── initial_binding.dart/<br>
+│           │   │   └── superapp_binding.dart/<br>
+│           │   │/<br>
+│           │   ├── config//<br>
+│           │   │   ├── app_config.dart/<br>
+│           │   │   ├── environment_config.dart/<br>
+│           │   │   ├── country_config.dart/<br>
+│           │   │   └── flavor_config.dart/<br>
+│           │   │/<br>
+│           │   ├── navigation//<br>
+│           │   │   ├── app_navigation.dart/<br>
+│           │   │   ├── navigation_service.dart/<br>
+│           │   │   └── miniapp_host_page.dart/<br>
+│           │   │/<br>
+│           │   ├── sdk//<br>
+│           │   │   ├── superapp_sdk_factory.dart/<br>
+│           │   │   └── adapters//<br>
+│           │   │       ├── auth_sdk_adapter.dart/<br>
+│           │   │       ├── wallet_sdk_adapter.dart/<br>
+│           │   │       ├── payment_sdk_adapter.dart/<br>
+│           │   │       └── bill_payment_sdk_adapter.dart/<br>
+│           │   │/<br>
+│           │   └── services//<br>
+│           │       ├── auth_session_service.dart/<br>
+│           │       ├── wallet_service.dart/<br>
+│           │       ├── payment_service.dart/<br>
+│           │       ├── country_service.dart/<br>
+│           │       └── user_session_service.dart/<br>
+│           │/<br>
+│           ├── features//<br>
+│           │   │/<br>
+│           │   ├── splash//<br>
+│           │   ├── onboarding//<br>
+│           │   ├── authentication//<br>
+│           │   ├── dashboard//<br>
+│           │   ├── wallet//<br>
+│           │   ├── profile//<br>
+│           │   ├── settings//<br>
+│           │   ├── notifications//<br>
+│           │   └── support//<br>
+│           │/<br>
+│           ├── miniapps//<br>
+│           │   ├── miniapp_initializer.dart/<br>
+│           │   └── miniapp_registration.dart/<br>
+│           │/<br>
+│           └── shared//<br>
+│               ├── constants//<br>
+│               ├── enums//<br>
+│               ├── extensions//<br>
+│               ├── helpers//<br>
+│               └── utils//<br>
+│/<br>
+├── packages//<br>
+│   │/<br>
+│   ├── core//<br>
+│   │   │/<br>
+│   │   ├── core_common//<br>
+│   │   │   ├── pubspec.yaml/<br>
+│   │   │   └── lib//<br>
+│   │   │       ├── core_common.dart/<br>
+│   │   │       └── src//<br>
+│   │   │           ├── constants//<br>
+│   │   │           ├── enums//<br>
+│   │   │           ├── exceptions//<br>
+│   │   │           ├── extensions//<br>
+│   │   │           ├── helpers//<br>
+│   │   │           ├── utils//<br>
+│   │   │           └── result//<br>
+│   │   │/<br>
+│   │   ├── core_network//<br>
+│   │   │   ├── pubspec.yaml/<br>
+│   │   │   └── lib//<br>
+│   │   │       ├── core_network.dart/<br>
+│   │   │       └── src//<br>
+│   │   │           ├── dio_client.dart/<br>
+│   │   │           ├── api_endpoints.dart/<br>
+│   │   │           ├── api_response.dart/<br>
+│   │   │           ├── network_info.dart/<br>
+│   │   │           ├── interceptors//<br>
+│   │   │           │   ├── auth_interceptor.dart/<br>
+│   │   │           │   ├── retry_interceptor.dart/<br>
+│   │   │           │   ├── log_interceptor.dart/<br>
+│   │   │           │   └── session_expired_interceptor.dart/<br>
+│   │   │           └── exceptions//<br>
+│   │   │/<br>
+│   │   ├── core_storage//<br>
+│   │   │   ├── pubspec.yaml/<br>
+│   │   │   └── lib//<br>
+│   │   │       ├── core_storage.dart/<br>
+│   │   │       └── src//<br>
+│   │   │           ├── local_storage.dart/<br>
+│   │   │           ├── secure_storage.dart/<br>
+│   │   │           ├── storage_keys.dart/<br>
+│   │   │           └── storage_service.dart/<br>
+│   │   │/<br>
+│   │   ├── core_security//<br>
+│   │   │   ├── pubspec.yaml/<br>
+│   │   │   └── lib//<br>
+│   │   │       ├── core_security.dart/<br>
+│   │   │       └── src//<br>
+│   │   │           ├── biometric//<br>
+│   │   │           ├── mpin//<br>
+│   │   │           ├── encryption//<br>
+│   │   │           ├── device_security//<br>
+│   │   │           └── session_security//<br>
+│   │   │/<br>
+│   │   ├── core_theme//<br>
+│   │   │   ├── pubspec.yaml/<br>
+│   │   │   └── lib//<br>
+│   │   │       ├── core_theme.dart/<br>
+│   │   │       └── src//<br>
+│   │   │           ├── colors//<br>
+│   │   │           ├── typography//<br>
+│   │   │           ├── themes//<br>
+│   │   │           ├── dimensions//<br>
+│   │   │           └── theme_controller.dart/<br>
+│   │   │/<br>
+│   │   ├── core_localization//<br>
+│   │   │   ├── pubspec.yaml/<br>
+│   │   │   └── lib//<br>
+│   │   │       ├── core_localization.dart/<br>
+│   │   │       └── src//<br>
+│   │   │           ├── locale_service.dart/<br>
+│   │   │           └── translation_loader.dart/<br>
+│   │   │/<br>
+│   │   └── core_logging//<br>
+│   │       ├── pubspec.yaml/<br>
+│   │       └── lib//<br>
+│   │           ├── core_logging.dart/<br>
+│   │           └── src//<br>
+│   │               ├── app_logger.dart/<br>
+│   │               └── log_observer.dart/<br>
+│   │/<br>
+│   ├── superapp_sdk//<br>
+│   │   ├── pubspec.yaml/<br>
+│   │   └── lib//<br>
+│   │       ├── superapp_sdk.dart/<br>
+│   │       └── src//<br>
+│   │           ├── auth//<br>
+│   │           │   └── auth_sdk.dart/<br>
+│   │           ├── wallet//<br>
+│   │           │   └── wallet_sdk.dart/<br>
+│   │           ├── payment//<br>
+│   │           │   ├── payment_sdk.dart/<br>
+│   │           │   └── bill_payment_sdk.dart/<br>
+│   │           ├── navigation//<br>
+│   │           │   └── navigation_sdk.dart/<br>
+│   │           ├── device//<br>
+│   │           │   └── device_sdk.dart/<br>
+│   │           ├── analytics//<br>
+│   │           │   └── analytics_sdk.dart/<br>
+│   │           └── models//<br>
+│   │               ├── app_user.dart/<br>
+│   │               ├── wallet_balance.dart/<br>
+│   │               ├── payment_request.dart/<br>
+│   │               ├── payment_result.dart/<br>
+│   │               └── bill_payment_request.dart/<br>
+│   │/<br>
+│   ├── miniapp_platform//<br>
+│   │   │/<br>
+│   │   ├── miniapp_contract//<br>
+│   │   │   ├── pubspec.yaml/<br>
+│   │   │   └── lib//<br>
+│   │   │       ├── miniapp_contract.dart/<br>
+│   │   │       └── src//<br>
+│   │   │           ├── miniapp.dart/<br>
+│   │   │           ├── miniapp_manifest.dart/<br>
+│   │   │           ├── miniapp_context.dart/<br>
+│   │   │           ├── miniapp_status.dart/<br>
+│   │   │           ├── miniapp_capability.dart/<br>
+│   │   │           └── miniapp_exception.dart/<br>
+│   │   │/<br>
+│   │   ├── miniapp_registry//<br>
+│   │   │   ├── pubspec.yaml/<br>
+│   │   │   └── lib//<br>
+│   │   │       ├── miniapp_registry.dart/<br>
+│   │   │       └── src//<br>
+│   │   │           ├── registry.dart/<br>
+│   │   │           └── registry_entry.dart/<br>
+│   │   │/<br>
+│   │   ├── miniapp_runtime//<br>
+│   │   │   ├── pubspec.yaml/<br>
+│   │   │   └── lib//<br>
+│   │   │       ├── miniapp_runtime.dart/<br>
+│   │   │       └── src//<br>
+│   │   │           ├── runtime.dart/<br>
+│   │   │           ├── miniapp_session.dart/<br>
+│   │   │           ├── miniapp_launcher.dart/<br>
+│   │   │           ├── miniapp_lifecycle.dart/<br>
+│   │   │           ├── miniapp_access_manager.dart/<br>
+│   │   │           ├── miniapp_navigation_coordinator.dart/<br>
+│   │   │           └── miniapp_error_handler.dart/<br>
+│   │   │/<br>
+│   │   └── miniapp_event_bus//<br>
+│   │       ├── pubspec.yaml/<br>
+│   │       └── lib//<br>
+│   │           ├── miniapp_event_bus.dart/<br>
+│   │           └── src//<br>
+│   │               ├── miniapp_event.dart/<br>
+│   │               └── event_bus.dart/<br>
+│   │/<br>
+│   ├── miniapps//<br>
+│   │   │/<br>
+│   │   ├── miniapp_send_money//<br>
+│   │   │   ├── pubspec.yaml/<br>
+│   │   │   └── lib//<br>
+│   │   │       ├── miniapp_send_money.dart/<br>
+│   │   │       └── src//<br>
+│   │   │           ├── send_money_miniapp.dart/<br>
+│   │   │           ├── domain//<br>
+│   │   │           │   ├── entities//<br>
+│   │   │           │   ├── repositories//<br>
+│   │   │           │   └── usecases//<br>
+│   │   │           ├── data//<br>
+│   │   │           │   ├── models//<br>
+│   │   │           │   ├── datasources//<br>
+│   │   │           │   └── repositories//<br>
+│   │   │           └── presentation//<br>
+│   │   │               ├── bindings//<br>
+│   │   │               ├── controllers//<br>
+│   │   │               ├── pages//<br>
+│   │   │               └── widgets//<br>
+│   │   │/<br>
+│   │   ├── miniapp_bill_payment//<br>
+│   │   │   ├── pubspec.yaml/<br>
+│   │   │   └── lib//<br>
+│   │   │       ├── miniapp_bill_payment.dart/<br>
+│   │   │       └── src//<br>
+│   │   │           ├── bill_payment_miniapp.dart/<br>
+│   │   │           ├── domain//<br>
+│   │   │           │   ├── entities//<br>
+│   │   │           │   │   ├── biller.dart/<br>
+│   │   │           │   │   ├── biller_field.dart/<br>
+│   │   │           │   │   ├── biller_account.dart/<br>
+│   │   │           │   │   └── bill_payment_request.dart/<br>
+│   │   │           │   ├── repositories//<br>
+│   │   │           │   └── usecases//<br>
+│   │   │           ├── data//<br>
+│   │   │           │   ├── models//<br>
+│   │   │           │   ├── datasources//<br>
+│   │   │           │   └── repositories//<br>
+│   │   │           └── presentation//<br>
+│   │   │               ├── bindings//<br>
+│   │   │               ├── controllers//<br>
+│   │   │               ├── pages//<br>
+│   │   │               │   ├── biller_list_page.dart/<br>
+│   │   │               │   ├── biller_form_page.dart/<br>
+│   │   │               │   └── biller_review_page.dart/<br>
+│   │   │               ├── widgets//<br>
+│   │   │               │   ├── dynamic_biller_form.dart/<br>
+│   │   │               │   ├── dynamic_form_field.dart/<br>
+│   │   │               │   ├── biller_account_dropdown.dart/<br>
+│   │   │               │   └── biller_custom_screen_registry.dart/<br>
+│   │   │               └── validators//<br>
+│   │   │/<br>
+│   │   ├── miniapp_qr_payment//<br>
+│   │   │   ├── pubspec.yaml/<br>
+│   │   │   └── lib//<br>
+│   │   │       ├── miniapp_qr_payment.dart/<br>
+│   │   │       └── src//<br>
+│   │   │/<br>
+│   │   ├── miniapp_bank_transfer/<br>/
+│   │   │   ├── pubspec.yaml/<br>
+│   │   │   └── lib//<br>
+│   │   │       ├── miniapp_bank_transfer.dart/<br>
+│   │   │       └── src//<br>
+│   │   │/<br>
+│   │   ├── miniapp_merchant//<br>
+│   │   │   ├── pubspec.yaml/<br>
+│   │   │   └── lib//<br>
+│   │   │       ├── miniapp_merchant.dart/<br>
+│   │   │       └── src//<br>
+│   │   │/<br>
+│   │   └── miniapp_shopping//<br>
+│   │       ├── pubspec.yaml/<br>
+│   │       └── lib//<br>
+│   │           ├── miniapp_shopping.dart/<br>
+│   │           └── src//<br>
+│   │/<br>
+│   └── shared_ui//<br>
+│       ├── pubspec.yaml/<br>
+│       └── lib//<br>
+│           ├── shared_ui.dart/<br>
+│           └── src//<br>
+│               ├── buttons//<br>
+│               ├── cards//<br>
+│               ├── dialogs//<br>
+│               ├── fields//<br>
+│               ├── loaders//<br>
+│               ├── navigation//<br>
+│               ├── sheets//<br>
+│               ├── typography//<br>
+│               └── widgets//<br>
+│/<br>
+├── test//<br>
+│   ├── core//<br>
+│   ├── sdk//<br>
+│   ├── runtime//<br>
+│   └── integration//<br>
+│/<br>
+└── docs//<br>
+    ├── architecture.md/<br>
+    ├── miniapp_development_guide.md/<br>
+    ├── sdk_documentation.md/<br>
     ├── api_integration.md
     ├── security_guidelines.md
     └── release_process.md
