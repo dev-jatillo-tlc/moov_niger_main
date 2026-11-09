@@ -1,0 +1,56 @@
+
+name: moov_niger_ussd
+description: Moov Money Flooz SuperApp
+publish_to: none
+
+environment:
+  sdk: ^3.9.2
+  flutter: ">=1.17.0"
+
+resolution: workspace
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  get: ^4.6.6
+
+  core_common:
+    path: ../../packages/core/core_common
+
+  core_network:
+    path: ../../packages/core/core_network
+
+  core_storage:
+    path: ../../packages/core/core_storage
+
+  core_security:
+    path: ../../packages/core/core_security
+
+  superapp_sdk:
+    path: ../../packages/superapp_sdk
+
+  miniapp_contract:
+    path: ../../packages/miniapp_platform/miniapp_contract
+
+  miniapp_registry:
+    path: ../../packages/miniapp_platform/miniapp_registry
+
+  miniapp_runtime:
+    path: ../../packages/miniapp_platform/miniapp_runtime
+
+  miniapp_send_money:
+    path: ../../packages/miniapps/miniapp_send_money
+
+  shared_ui:
+    path: ../../packages/shared_ui
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+
+flutter:
+  uses-material-design: true
