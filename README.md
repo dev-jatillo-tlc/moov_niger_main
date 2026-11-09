@@ -40,14 +40,14 @@ from the package authors, and more.
 
 
 moov_money//<br>
-│/<br>
+│
 ├── pubspec.yaml/<br>
 ├── melos.yaml/<br>
 ├── analysis_options.yaml/<br>
 ├── README.md/<br>
-│/<br>
+│
 ├── apps//<br>
-│<space>│/<br>
+│&nbsp;│/<br>
 │   └── superapp//<br>
 │       ├── pubspec.yaml/<br>
 │       ├── analysis_options.yaml/<br>
